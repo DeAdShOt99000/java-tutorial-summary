@@ -4,11 +4,11 @@ Every line of code that runs in Java must be inside a class.
 
 The name of the java file must match the class name.
 
-remember that every Java program has a class name which must match the filename, and that every program must contain the main() method.
+remember that every Java program has a class name which must match the filename, and that every program must contain the `main()` method.
 
 note that each code statement must end with a semicolon (;).
 
-There is also a print() method, which is similar to println(),
+There is also a `print()` method, which is similar to `println()`,
 The only difference is that it does not insert a new line at the end of the output.
 
 You can also declare a variable without assigning the value, and assign the value later.
@@ -28,9 +28,9 @@ x = y = z = 50;
 
 **Data** types are divided into two groups:
 
-**_Primitive data types_** - includes byte, short, int, long, float, double, boolean and char.
+**_Primitive data types_** - includes `byte`, `short`, `int`, `long`, `float`, `double`, `boolean` and `char`.
 
-**_Non-primitive data types_** - such as String, Arrays and Classes.
+**_Non-primitive data types_** - such as `String`, `Arrays` and *Classes*.
 
 **Long** number ends with *L*, **flaot** ends with *f* and **double** ends with *d*.
 
@@ -47,9 +47,9 @@ char myVar1 = 65, myVar2 = 66, myVar3 = 67; // A, B, C
 
 The main difference between **_primitive_** and **_non-primitive_** data types are:
 
-- Primitive types are predefined (already defined) in Java. Non-primitive types are created by the programmer and is not defined by Java (except for String).
+- Primitive types are predefined (already defined) in Java. Non-primitive types are created by the programmer and is not defined by Java (except for `String`).
 - Non-primitive types can be used to call methods to perform certain operations, while primitive types cannot.
-- A primitive type has always a value, while non-primitive types can be null.
+- A primitive type has always a value, while non-primitive types can be `null`.
 - A primitive type starts with a lowercase letter, while non-primitive types starts with an uppercase letter.
 
 ---
@@ -949,7 +949,7 @@ A **lambda expression** is a short block of code which takes in parameters and r
 The simplest lambda expression contains a single parameter and an expression, to use more than one parameter, wrap them in parentheses.
 
 Expressions are limited. They have to immediately return a value, and they cannot contain variables, assignments or statements such as `if` or `for`. In order to do more complex operations, a code block can be used with curly braces. If the lambda expression needs to return a value, then the code block should have a `return` statement:
-```java
+```
 parameter -> expression
 
 (parameter1, parameter2) -> expression
