@@ -1078,3 +1078,81 @@ public class WriteToFile {
   }
 }
 ```
+
+We can use `Scanner` class to read the contents of the text file we created:
+```java
+import java.io.File;  // Import the File class
+import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.util.Scanner; // Import the Scanner class to read text files
+
+public class ReadFile {
+  public static void main(String[] args) {
+    try {
+      File myObj = new File("filename.txt");
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+        System.out.println(data);
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+To get more information about a file, use any of the `File` methods:
+```java
+import java.io.File;  // Import the File class
+
+public class GetFileInfo { 
+  public static void main(String[] args) {
+    File myObj = new File("filename.txt");
+    if (myObj.exists()) {
+      System.out.println("File name: " + myObj.getName());
+      System.out.println("Absolute path: " + myObj.getAbsolutePath());
+      System.out.println("Writeable: " + myObj.canWrite());
+      System.out.println("Readable " + myObj.canRead());
+      System.out.println("File size in bytes " + myObj.length());
+    } else {
+      System.out.println("The file does not exist.");
+    }
+  }
+}
+```
+
+There are many available classes in the Java API that can be used to read and write files in Java: `FileReader`, `BufferedReader`, `Files`, `Scanner`, `FileInputStream`, `FileWriter`, `BufferedWriter`, `FileOutputStream`, etc. Which one to use depends on the Java version you're working with and whether you need to read bytes or characters, and the size of the file/lines etc.
+
+To delete a file in Java, use the `delete()` method:
+```java
+import java.io.File;  // Import the File class
+
+public class DeleteFile {
+  public static void main(String[] args) { 
+    File myObj = new File("filename.txt"); 
+    if (myObj.delete()) { 
+      System.out.println("Deleted the file: " + myObj.getName());
+    } else {
+      System.out.println("Failed to delete the file.");
+    } 
+  } 
+}
+```
+
+You can also delete a folder. However, it must be empty:
+```java
+import java.io.File; 
+
+public class DeleteFolder {
+  public static void main(String[] args) { 
+    File myObj = new File("C:\\Users\\MyName\\Test"); 
+    if (myObj.delete()) { 
+      System.out.println("Deleted the folder: " + myObj.getName());
+    } else {
+      System.out.println("Failed to delete the folder.");
+    } 
+  } 
+}
+```
